@@ -1,0 +1,5 @@
+{
+  "textEditor.codeCompletions.general.codeCompletionsProviders": [],
+  "copilot.general.chat.enableAgentMode": false,
+  "copilot.general.chat.autoAttachActiveDocument": false
+}
