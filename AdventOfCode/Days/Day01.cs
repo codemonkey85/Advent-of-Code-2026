@@ -1,13 +1,11 @@
-﻿namespace AdventOfCode;
+﻿namespace AdventOfCode.Days;
 
-public class Day01 : BaseDay
+[AocExpected("", "")]
+public sealed class Day01 : BaseDay
 {
-    private readonly string _input;
+    private readonly string input;
 
-    public Day01()
-    {
-        _input = File.ReadAllText(InputFilePath);
-    }
+    public Day01() => input = File.ReadAllText(InputFilePath);
 
     public override ValueTask<string> Solve_1() => new($"Solution to {ClassPrefix} {CalculateIndex()}, part 1");
 
