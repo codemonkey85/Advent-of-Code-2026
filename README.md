@@ -4,15 +4,17 @@
 
 Based on [AoCTemplate](https://github.com/eduherminio/AdventOfCode.Template) by [eduherminio](https://github.com/eduherminio).
 
+Days 1–12 are scaffolded with placeholder logic that counts nonempty lines for Part 1 and their total characters for Part 2. Replace each day's solvers as its puzzle is released.
+
 ## Run puzzles
 
 Install the .NET 11 SDK specified in `global.json`. From the repository root:
 
 ```console
-dotnet run --project AdventOfCode                # Latest implemented day
+dotnet run --project AdventOfCode                # Latest available day (currently Day 12)
 dotnet run --project AdventOfCode -- 1           # Day 1
-dotnet run --project AdventOfCode -- 1 2         # Specific days, once implemented
-dotnet run --project AdventOfCode -- all         # All implemented days
+dotnet run --project AdventOfCode -- 1 2         # Specific days
+dotnet run --project AdventOfCode -- all         # All 12 days
 dotnet run --project AdventOfCode -- --plain 1   # Plain text, no live display
 ```
 
@@ -20,8 +22,8 @@ Plain output is automatic when standard input or output is redirected. Put your 
 
 ## Add and test a day
 
-1. Add a `DayXX` class under `AdventOfCode/Days` using `DayXX() : TextDay(DayXX.SolvePart1, DayXX.SolvePart2)`. The two static solver methods take the raw input and return an answer string. `TextDay` loads the input on the first solve and reuses it for both parts. For days that need custom input handling, inherit `BaseDay` directly.
-2. Add an inline sample test in `AdventOfCode.Tests`. `Day01` and its test currently demonstrate the pattern with placeholder logic. Replace both with the real puzzle and sample when available.
+1. Replace the placeholder logic in the corresponding `DayXX` class under `AdventOfCode/Days`. All 12 days use `DayXX() : TextDay(DayXX.SolvePart1, DayXX.SolvePart2)`. The two static solver methods take the raw input and return an answer string. `TextDay` loads the input on the first solve and reuses it for both parts. For days that need custom input handling, inherit `BaseDay` directly.
+2. Replace the placeholder sample and expected answers in the corresponding `DayXXTests` class in `AdventOfCode.Tests`. All 12 days have inline sample tests for both parts. Update each day's solvers and tests with the real puzzle and sample when available.
 3. Record verified personal answers with `[AocExpected("123", "456")]`. An omitted or `null` answer generates no test for that part. An explicit empty string generates a test.
 
 ```console
