@@ -1,7 +1,7 @@
 using System.Collections.Immutable;
 using System.Text;
 using Microsoft.CodeAnalysis;
-using CSharpSymbolDisplay = Microsoft.CodeAnalysis.CSharp.SymbolDisplay;
+using Microsoft.CodeAnalysis.CSharp;
 
 namespace AdventOfCode.TestGenerator;
 
@@ -113,7 +113,7 @@ public sealed class AocTestGenerator : IIncrementalGenerator
                                         {
                                             var day = new {{answer.TypeName}}();
                                             var result = await day.Solve_{{part}}();
-                                            global::Xunit.Assert.Equal({{CSharpSymbolDisplay.FormatLiteral(expected, quote: true)}}, result);
+                                            global::Xunit.Assert.Equal({{SymbolDisplay.FormatLiteral(expected, quote: true)}}, result);
                                         }
 
                                     """);

@@ -1,2 +1,2 @@
-﻿global using AoCHelper;
-global using System.Globalization;
+﻿global using System.Globalization;
+global using AoCHelper;
