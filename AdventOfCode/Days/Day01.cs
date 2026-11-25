@@ -1,16 +1,8 @@
 namespace AdventOfCode.Days;
 
-[AocExpected]
-public sealed class Day01 : BaseDay
+[AocExpected("3", "11")]
+public sealed class Day01() : TextDay(SolvePart1, SolvePart2)
 {
-    private readonly string input;
-
-    public Day01() => input = File.ReadAllText(Path.GetFullPath(InputFilePath, AppContext.BaseDirectory));
-
-    public override ValueTask<string> Solve_1() => new(SolvePart1(input));
-
-    public override ValueTask<string> Solve_2() => new(SolvePart2(input));
-
     // Smoke-test logic for the scaffold. Replace it when the puzzle is released.
     public static string SolvePart1(string input) => ReadLines(input).Length.ToString(CultureInfo.InvariantCulture);
 

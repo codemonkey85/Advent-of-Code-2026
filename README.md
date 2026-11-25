@@ -20,7 +20,7 @@ Plain output is automatic when standard input or output is redirected. Put your 
 
 ## Add and test a day
 
-1. Add a `DayXX` class under `AdventOfCode/Days` that inherits `BaseDay`. Resolve the input path relative to `AppContext.BaseDirectory` as in `Day01`, and put the puzzle logic in methods that accept input directly.
+1. Add a `DayXX` class under `AdventOfCode/Days` using `DayXX() : TextDay(DayXX.SolvePart1, DayXX.SolvePart2)`. The two static solver methods take the raw input and return an answer string. `TextDay` loads the input on the first solve and reuses it for both parts. For days that need custom input handling, inherit `BaseDay` directly.
 2. Add an inline sample test in `AdventOfCode.Tests`. `Day01` and its test currently demonstrate the pattern with placeholder logic. Replace both with the real puzzle and sample when available.
 3. Record verified personal answers with `[AocExpected("123", "456")]`. An omitted or `null` answer generates no test for that part. An explicit empty string generates a test.
 
