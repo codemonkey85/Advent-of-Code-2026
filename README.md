@@ -1,5 +1,7 @@
 # Advent of Code 2026
 
+[![CI](https://github.com/codemonkey85/Advent-of-Code-2026/actions/workflows/ci.yml/badge.svg)](https://github.com/codemonkey85/Advent-of-Code-2026/actions/workflows/ci.yml)
+
 Based on [AoCTemplate](https://github.com/eduherminio/AdventOfCode.Template) by [eduherminio](https://github.com/eduherminio).
 
 ## Run puzzles
