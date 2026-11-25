@@ -2,6 +2,8 @@ name: CI
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [ main ]
   push:
     branches: [ main ]
 
@@ -11,24 +13,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # uses GitHub's checkout action to checkout code form the release branch
       - name: Checkout code
         uses: actions/checkout@v7.0.1
 
-      # sets up .NET SDK
       - name: Setup .NET
         uses: actions/setup-dotnet@v6.1.0
         with:
           global-json-file: ./global.json
 
       - name: Restore dependencies
-        run: dotnet restore
-        working-directory: ./AdventOfCode
+        run: dotnet restore AdventOfCode.slnx
 
       - name: Build
-        run: dotnet build --configuration Release --no-restore
-        working-directory: ./AdventOfCode
+        run: dotnet build AdventOfCode.slnx --configuration Release --no-restore
 
-      - name: Run tests
-        run: dotnet test --configuration Release --no-build
-        working-directory: ./AdventOfCode
+      - name: Run tests without personal input
+        run: dotnet test AdventOfCode.slnx --configuration Release --no-build --filter "Category!=RealInput"
